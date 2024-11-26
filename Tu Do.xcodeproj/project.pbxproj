@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15698FEC2CF566E200EBC993 /* AppDelegate.swift */; };
 		15698FEF2CF566E200EBC993 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15698FEE2CF566E200EBC993 /* SceneDelegate.swift */; };
-		15698FF12CF566E200EBC993 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15698FF02CF566E200EBC993 /* ViewController.swift */; };
+		15698FF12CF566E200EBC993 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15698FF02CF566E200EBC993 /* TasksViewController.swift */; };
 		15698FF42CF566E200EBC993 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 15698FF32CF566E200EBC993 /* Base */; };
 		15698FF72CF566E200EBC993 /* Tu_Do.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15698FF52CF566E200EBC993 /* Tu_Do.xcdatamodeld */; };
 		15698FF92CF566E500EBC993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15698FF82CF566E500EBC993 /* Assets.xcassets */; };
 		15698FFC2CF566E500EBC993 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 15698FFB2CF566E500EBC993 /* Base */; };
+		156990052CF57C3200EBC993 /* MenuSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990042CF57C3200EBC993 /* MenuSections.swift */; };
+		156990082CF582E300EBC993 /* InProgressTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990072CF582E300EBC993 /* InProgressTasksViewController.swift */; };
+		1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990092CF582FE00EBC993 /* DoneTasksViewController.swift */; };
 		D3158A6C5677172CE8965090 /* Pods_Tu_Do.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADF8E158ACD576A04A27335 /* Pods_Tu_Do.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +24,15 @@
 		15698FE92CF566E200EBC993 /* Tu Do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tu Do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15698FEC2CF566E200EBC993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15698FEE2CF566E200EBC993 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		15698FF02CF566E200EBC993 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		15698FF02CF566E200EBC993 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		15698FF32CF566E200EBC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15698FF62CF566E200EBC993 /* Tu_Do.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tu_Do.xcdatamodel; sourceTree = "<group>"; };
 		15698FF82CF566E500EBC993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15698FFB2CF566E500EBC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15698FFD2CF566E500EBC993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		156990042CF57C3200EBC993 /* MenuSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSections.swift; sourceTree = "<group>"; };
+		156990072CF582E300EBC993 /* InProgressTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressTasksViewController.swift; sourceTree = "<group>"; };
+		156990092CF582FE00EBC993 /* DoneTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTasksViewController.swift; sourceTree = "<group>"; };
 		2ADF8E158ACD576A04A27335 /* Pods_Tu_Do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tu_Do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FB06C1F2DDD23F0CF9E0FB /* Pods-Tu Do.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tu Do.debug.xcconfig"; path = "Target Support Files/Pods-Tu Do/Pods-Tu Do.debug.xcconfig"; sourceTree = "<group>"; };
 		F705D8F64174FBF10E8766A2 /* Pods-Tu Do.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tu Do.release.xcconfig"; path = "Target Support Files/Pods-Tu Do/Pods-Tu Do.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,9 +71,11 @@
 		15698FEB2CF566E200EBC993 /* Tu Do */ = {
 			isa = PBXGroup;
 			children = (
+				156990062CF5829700EBC993 /* Controllers */,
+				156990032CF576A800EBC993 /* Model */,
 				15698FEC2CF566E200EBC993 /* AppDelegate.swift */,
 				15698FEE2CF566E200EBC993 /* SceneDelegate.swift */,
-				15698FF02CF566E200EBC993 /* ViewController.swift */,
+				15698FF02CF566E200EBC993 /* TasksViewController.swift */,
 				15698FF22CF566E200EBC993 /* Main.storyboard */,
 				15698FF82CF566E500EBC993 /* Assets.xcassets */,
 				15698FFA2CF566E500EBC993 /* LaunchScreen.storyboard */,
@@ -75,6 +83,23 @@
 				15698FF52CF566E200EBC993 /* Tu_Do.xcdatamodeld */,
 			);
 			path = "Tu Do";
+			sourceTree = "<group>";
+		};
+		156990032CF576A800EBC993 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				156990042CF57C3200EBC993 /* MenuSections.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		156990062CF5829700EBC993 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				156990072CF582E300EBC993 /* InProgressTasksViewController.swift */,
+				156990092CF582FE00EBC993 /* DoneTasksViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		2C2CA098623D13D1BE87B10A /* Pods */ = {
@@ -209,9 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15698FF12CF566E200EBC993 /* ViewController.swift in Sources */,
+				15698FF12CF566E200EBC993 /* TasksViewController.swift in Sources */,
+				156990052CF57C3200EBC993 /* MenuSections.swift in Sources */,
 				15698FF72CF566E200EBC993 /* Tu_Do.xcdatamodeld in Sources */,
+				156990082CF582E300EBC993 /* InProgressTasksViewController.swift in Sources */,
 				15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */,
+				1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */,
 				15698FEF2CF566E200EBC993 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +303,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -338,7 +366,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
