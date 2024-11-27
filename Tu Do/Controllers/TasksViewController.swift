@@ -8,16 +8,22 @@
 import UIKit
 
 class TasksViewController: UIViewController {
-
+    //MARK: outlets
     @IBOutlet var menuSegmentedControll: UISegmentedControl!
     @IBOutlet var inProgressTasksContianerView : UIView!
     @IBOutlet var DoneTasksContianerView : UIView!
+    
+    //MARK: properties
+    private var databaseManager = DatabaseManager()
+
+    //MARK: lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpmenuSegmentedControll()
         showContainerView(for: .inProgress)
     }
     
+    //MARK: actions
     @IBAction func SegmentedControllTapped(_ sender : UISegmentedControl){
         switch sender.selectedSegmentIndex {
         case 0 :
@@ -27,6 +33,14 @@ class TasksViewController: UIViewController {
         default :
             break
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowAddNewTask" ,
+           let destination = segue.destination as? NewTaskViewController{
+            destination.delegate = self
+        }
+            
     }
     @IBAction func AddTaskButtonTapped(_ sender : UIButton){
         performSegue(withIdentifier: "ShowAddNewTask", sender: nil)
@@ -53,4 +67,19 @@ extension TasksViewController {
             DoneTasksContianerView.isHidden = false
         }
     }
+}
+
+extension TasksViewController: TaskViewControllerDelegate {
+    func didAddTask(_ task: Task) {
+    databaseManager.addNewTask(task) { (result) in
+            switch result{
+                
+            case .success():
+                print("new task was added")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
 }

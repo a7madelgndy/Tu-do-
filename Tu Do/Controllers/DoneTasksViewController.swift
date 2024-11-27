@@ -11,6 +11,6 @@ class DoneTasksViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemRed
     }
 }
+

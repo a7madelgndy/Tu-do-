@@ -75,7 +75,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Tasks " id="vgo-fW-2Np">
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="JfI-Fa-flN">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="JfI-Fa-flN">
                             <rect key="frame" x="131" y="6" width="131" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -209,13 +209,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PHo-x7-wwu">
-                                <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellid" rowHeight="163" id="PHo-x7-wwu" customClass="InProgressTableViewCell" customModule="Tu_Do" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="163"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PHo-x7-wwu" id="c2I-tI-h0h">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="163"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kjc-5o-WkP">
+                                            <rect key="frame" x="36" y="24" width="321" height="115"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF8-0B-wRc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="26" height="115"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="BF8-0B-wRc" secondAttribute="height" multiplier="1:1" id="KPF-No-2zE"/>
+                                                        <constraint firstAttribute="width" constant="26" id="ceQ-pm-GFL"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="doneButtonTapped:" destination="PHo-x7-wwu" eventType="touchUpInside" id="Bnd-YH-CdU"/>
+                                                    </connections>
+                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nyk-KZ-pgc">
+                                                    <rect key="frame" x="42" y="0.0" width="279" height="115"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random task " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EP-8S-jTZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="279" height="98"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="due in 3 days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibx-Tx-iN9">
+                                                            <rect key="frame" x="0.0" y="98" width="279" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="TNs-DU-T0a"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="kjc-5o-WkP" secondAttribute="bottom" constant="12" id="BTG-sU-PDm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kjc-5o-WkP" secondAttribute="trailing" constant="16" id="W2g-lZ-MGK"/>
+                                        <constraint firstItem="kjc-5o-WkP" firstAttribute="leading" secondItem="c2I-tI-h0h" secondAttribute="leadingMargin" constant="16" id="dsC-Lo-v9R"/>
+                                        <constraint firstItem="kjc-5o-WkP" firstAttribute="top" secondItem="c2I-tI-h0h" secondAttribute="topMargin" constant="12" id="kBF-ME-42h"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="deadlineLable" destination="ibx-Tx-iN9" id="t4H-ob-ypG"/>
+                                    <outlet property="titleLable" destination="8EP-8S-jTZ" id="LcV-mc-njg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -226,7 +275,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BE4-Bk-esM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="723" y="610"/>
+            <point key="canvasLocation" x="726" y="669"/>
         </scene>
         <!--Done Tasks View Controller-->
         <scene sceneID="Cnd-nX-ecT">
@@ -254,7 +303,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJC-gZ-msv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="610"/>
+            <point key="canvasLocation" x="1448" y="669"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sbG-zl-IiU">
@@ -277,6 +326,7 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

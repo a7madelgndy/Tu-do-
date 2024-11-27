@@ -19,6 +19,10 @@
 		1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990092CF582FE00EBC993 /* DoneTasksViewController.swift */; };
 		1569900C2CF5941C00EBC993 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569900B2CF5941C00EBC993 /* NewTaskViewController.swift */; };
 		1569900E2CF6D00500EBC993 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1569900D2CF6D00500EBC993 /* GoogleService-Info.plist */; };
+		156990102CF6D8E500EBC993 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569900F2CF6D8E500EBC993 /* Task.swift */; };
+		156990132CF6DCDE00EBC993 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990122CF6DCDE00EBC993 /* DatabaseManager.swift */; };
+		156990162CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990152CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift */; };
+		156990192CF6F13900EBC993 /* InProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */; };
 		D3158A6C5677172CE8965090 /* Pods_Tu_Do.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADF8E158ACD576A04A27335 /* Pods_Tu_Do.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		156990092CF582FE00EBC993 /* DoneTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTasksViewController.swift; sourceTree = "<group>"; };
 		1569900B2CF5941C00EBC993 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		1569900D2CF6D00500EBC993 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1569900F2CF6D8E500EBC993 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		156990122CF6DCDE00EBC993 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		156990152CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewControllerDelegate.swift; sourceTree = "<group>"; };
+		156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressTableViewCell.swift; sourceTree = "<group>"; };
 		2ADF8E158ACD576A04A27335 /* Pods_Tu_Do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tu_Do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FB06C1F2DDD23F0CF9E0FB /* Pods-Tu Do.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tu Do.debug.xcconfig"; path = "Target Support Files/Pods-Tu Do/Pods-Tu Do.debug.xcconfig"; sourceTree = "<group>"; };
 		F705D8F64174FBF10E8766A2 /* Pods-Tu Do.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tu Do.release.xcconfig"; path = "Target Support Files/Pods-Tu Do/Pods-Tu Do.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,11 +83,13 @@
 		15698FEB2CF566E200EBC993 /* Tu Do */ = {
 			isa = PBXGroup;
 			children = (
+				156990172CF6F07200EBC993 /* Views */,
+				156990142CF6EA1500EBC993 /* Protocols  */,
+				156990112CF6DCB200EBC993 /* Services */,
 				156990062CF5829700EBC993 /* Controllers */,
 				156990032CF576A800EBC993 /* Model */,
 				15698FEC2CF566E200EBC993 /* AppDelegate.swift */,
 				15698FEE2CF566E200EBC993 /* SceneDelegate.swift */,
-				15698FF02CF566E200EBC993 /* TasksViewController.swift */,
 				15698FF22CF566E200EBC993 /* Main.storyboard */,
 				15698FF82CF566E500EBC993 /* Assets.xcassets */,
 				15698FFA2CF566E500EBC993 /* LaunchScreen.storyboard */,
@@ -94,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				156990042CF57C3200EBC993 /* MenuSections.swift */,
+				1569900F2CF6D8E500EBC993 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,11 +112,36 @@
 		156990062CF5829700EBC993 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				15698FF02CF566E200EBC993 /* TasksViewController.swift */,
 				156990072CF582E300EBC993 /* InProgressTasksViewController.swift */,
 				156990092CF582FE00EBC993 /* DoneTasksViewController.swift */,
 				1569900B2CF5941C00EBC993 /* NewTaskViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		156990112CF6DCB200EBC993 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				156990122CF6DCDE00EBC993 /* DatabaseManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		156990142CF6EA1500EBC993 /* Protocols  */ = {
+			isa = PBXGroup;
+			children = (
+				156990152CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift */,
+			);
+			path = "Protocols ";
+			sourceTree = "<group>";
+		};
+		156990172CF6F07200EBC993 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2C2CA098623D13D1BE87B10A /* Pods */ = {
@@ -243,12 +279,16 @@
 			files = (
 				1569900C2CF5941C00EBC993 /* NewTaskViewController.swift in Sources */,
 				15698FF12CF566E200EBC993 /* TasksViewController.swift in Sources */,
+				156990132CF6DCDE00EBC993 /* DatabaseManager.swift in Sources */,
 				156990052CF57C3200EBC993 /* MenuSections.swift in Sources */,
 				15698FF72CF566E200EBC993 /* Tu_Do.xcdatamodeld in Sources */,
 				156990082CF582E300EBC993 /* InProgressTasksViewController.swift in Sources */,
 				15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */,
 				1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */,
+				156990162CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift in Sources */,
+				156990102CF6D8E500EBC993 /* Task.swift in Sources */,
 				15698FEF2CF566E200EBC993 /* SceneDelegate.swift in Sources */,
+				156990192CF6F13900EBC993 /* InProgressTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

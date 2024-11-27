@@ -16,9 +16,12 @@ class NewTaskViewController:UIViewController {
     @IBOutlet var newTaskTextFiled: UITextField!
     @IBOutlet var saveButton:UIButton!
     
-    //MARK: Properties
+    //MARK: Properties(To abserve)
     private var subscriper = Set <AnyCancellable>()
     @Published private var textFiledString:String?
+    
+    //MARK: delegats
+    var delegate:TaskViewControllerDelegate?
     
     //MARK: life cycle
     override func viewDidLoad() {
@@ -47,6 +50,11 @@ class NewTaskViewController:UIViewController {
     @IBAction func calendarButtonTapped(_ sender: Any) {
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
+
+        guard let text = self.textFiledString else {return }
+        let task = Task(taskTitle: text)
+        delegate?.didAddTask(task)
+        dismiss(animated: true)
     }
     //MARK: helper
     private func observeTextFiled(){
@@ -86,4 +94,5 @@ extension NewTaskViewController {
         return keyboardhight
     }
 }
+
 
