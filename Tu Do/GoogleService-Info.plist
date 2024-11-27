@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBllMP1ADx1AHiE4YbXlbBu5RLC5tzr_fg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>926994258463</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ahmed-elgndy.Tu-Do</string>
+	<key>PROJECT_ID</key>
+	<string>ios-tudo-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ios-tudo-app.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:926994258463:ios:017c2cff9b2e7a4a7b932a</string>
+</dict>
+</plist>
