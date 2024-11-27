@@ -31,7 +31,7 @@ class DatabaseManager {
     }
 
     func addlistener(forDoneTask isDone:Bool ,completion: @escaping (Result<[Task] ,Error>)-> Void) {
-        listener = taskCollection.whereField("isDone", isEqualTo: false).order(by: "createdAt", descending: true)
+        listener = taskCollection.whereField("isDone", isEqualTo: isDone).order(by: "createdAt", descending: true)
             .addSnapshotListener({ (snapshot , erorr) in
             if let erorr {
                 completion(.failure(erorr))
@@ -50,8 +50,18 @@ class DatabaseManager {
         }
         )
     }
-    func updateTaskToDone(id:String , complation: @escaping(Result<Void,Error>)-> Void) {
-        let field: [String : Any] = ["isDone":true ,"doneAt" : Date()]
+    func toggleTaskCompletionStatus(id:String , moveTo section : MenuSections , complation: @escaping(Result<Void,Error>)-> Void) {
+        //MARK: Broke single resposiblity please fix it
+        var field: [String : Any]  = [:]
+        switch section {
+            case .inProgress: 
+             field = ["isDone":false ,"doneAt" : Date()]
+
+            case .done:
+            field = ["isDone":true ,"doneAt" : FieldValue.description()]
+
+                
+        }
         taskCollection.document(id).updateData(field){(error) in
             if let error {
                 complation(.failure(error))

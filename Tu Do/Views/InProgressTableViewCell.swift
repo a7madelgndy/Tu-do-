@@ -17,7 +17,6 @@ class InProgressTableViewCell:UITableViewCell {
     
     @IBAction func doneButtonTapped(_ sender: UIButton){
         actionButtonDidTap?()
-        print("tapped")
     }
     //MARK: helpers
     

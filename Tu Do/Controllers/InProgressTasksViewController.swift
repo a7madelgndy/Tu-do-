@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class InProgressTasksViewController: UITableViewController {
+import Loaf
+class InProgressTasksViewController: UITableViewController ,Animatable{
     //MARK: propertis
     private var databaseManger = DatabaseManager()
     private var tasks:[Task] = []{
@@ -31,15 +31,15 @@ class InProgressTasksViewController: UITableViewController {
             }
         }
     }
-   
+   //MARK: actions
     private func handleActionButtonTapped(as task : Task){
         guard let taskId = task.id else {return}
-        databaseManger.updateTaskToDone(id: taskId) { (result) in
+        databaseManger.toggleTaskCompletionStatus(id: taskId, moveTo: .done) { [weak self]   (result) in
             switch result {
             case .success:
-                print("task added to done")
+                self?.displayMessage(state: .info,massage: "Move TO Done", location: .top )
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.displayMessage(state: .error,massage: error.localizedDescription, location: .top )
             }
         }
     }

@@ -33,7 +33,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-BV-ZWz" userLabel="Done Container View">
                                 <rect key="frame" x="0.0" y="155" width="393" height="609"/>
                                 <connections>
-                                    <segue destination="l5X-Kf-FTA" kind="embed" id="A8s-xJ-gcX"/>
+                                    <segue destination="l5X-Kf-FTA" kind="embed" id="nKW-hF-9TJ"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXC-uc-srq">
@@ -286,13 +286,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FQP-Fz-p7n">
-                                <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoneCellId" rowHeight="85" id="FQP-Fz-p7n" customClass="DoneTasksTableViewCell" customModule="Tu_Do" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FQP-Fz-p7n" id="aw4-x5-MgK">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vdv-sI-tKU">
+                                            <rect key="frame" x="36" y="24" width="321" height="37"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-iP-CHE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="26" height="37"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="fTe-f6-rqk"/>
+                                                        <constraint firstAttribute="width" secondItem="fRu-iP-CHE" secondAttribute="height" multiplier="1:1" id="geV-dW-y2X"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="checkmark.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="doneButtonTapped:" destination="FQP-Fz-p7n" eventType="touchUpInside" id="rvd-3G-xPL"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random task " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-23-6jS">
+                                                    <rect key="frame" x="42" y="0.0" width="279" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vdv-sI-tKU" firstAttribute="top" secondItem="aw4-x5-MgK" secondAttribute="topMargin" constant="12" id="5zn-NJ-AuQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vdv-sI-tKU" secondAttribute="trailing" constant="16" id="7vX-r7-GfV"/>
+                                        <constraint firstItem="vdv-sI-tKU" firstAttribute="leading" secondItem="aw4-x5-MgK" secondAttribute="leadingMargin" constant="16" id="fyK-oe-uHr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vdv-sI-tKU" secondAttribute="bottom" constant="12" id="jPQ-G5-nZN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="taskTitleLableL" destination="6TL-23-6jS" id="9Gw-Rg-1Ck"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -300,10 +334,11 @@
                             <outlet property="delegate" destination="l5X-Kf-FTA" id="151-bn-eEb"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="IeQ-hL-JCK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJC-gZ-msv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448" y="669"/>
+            <point key="canvasLocation" x="1489" y="669"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sbG-zl-IiU">
@@ -326,6 +361,7 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
