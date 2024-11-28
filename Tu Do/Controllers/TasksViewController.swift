@@ -36,25 +36,26 @@ class TasksViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowAddNewTask" ,
+        if segue.identifier == SegueIdentifier.showAddNewTask.ID,
            let destination = segue.destination as? NewTaskViewController{
             destination.delegate = self
-        }else if segue.identifier == "inProgressTasks" ,
+        }else if segue.identifier == SegueIdentifier.inProgressTasks.ID ,
                  let destination = segue.destination as? InProgressTasksViewController{
                      destination.delegate = self
         }}
 
     @IBAction func AddTaskButtonTapped(_ sender : UIButton){
-        performSegue(withIdentifier: "ShowAddNewTask", sender: nil)
+        performSegue(withIdentifier: SegueIdentifier.showAddNewTask.ID, sender: nil)
     }
 }
+
 
 //MARK: Managing Alert Controller
 extension TasksViewController:InProgressTasksVCDelete {
     func showOptionsForTask(task: Task){
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive) {[unowned self] _ in
+        let cancelAction = UIAlertAction(title: TaskAction.cancel.rawValue, style: .cancel)
+        let DeleteAction = UIAlertAction(title: TaskAction.delete.rawValue, style: .destructive) {[unowned self] _ in
             self.deleteTask(taskId: task.id ?? "0")
         }
         alertController.addAction(cancelAction)
@@ -85,27 +86,27 @@ extension TasksViewController {
     }
 }
 
+//MARK: ADD a task
 extension TasksViewController: TaskViewControllerDelegate {
     func didAddTask(_ task: Task) {
     databaseManager.addNewTask(task) { (result) in
             switch result{
             case .success():
-                print("new task was added")
+                break
             case .failure(let error):
-                print(error.localizedDescription)
-            }
+                self.displayMessage(state: .error, massage: error.localizedDescription, location: .top)            }
         }
     }
 
 }
 
-//MARK: Managing task Deletion
+//MARK: task Deletion
 extension TasksViewController: Animatable {
     func deleteTask(taskId: String){
         databaseManager.deleteTask(taskId: taskId) { (result) in
             switch result {
             case .success():
-                self.displayMessage(state:.success, massage: "Task Deleted Successfully")
+                self.displayMessage(state:.success, massage: MessageState.delete.rawValue)
             case .failure(let error):
                 self.displayMessage(state:.error, massage: error.localizedDescription )
             }

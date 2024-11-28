@@ -40,7 +40,7 @@ class DoneTasksViewController: UITableViewController,Animatable{
         databaseManger.toggleTaskCompletionStatus(id: taskId, moveTo: .inProgress) { [weak self]   (result) in
             switch result {
             case .success:
-                self?.displayMessage(state: .info,massage: "Move to do", location: .top )
+                self?.displayMessage(state: .info,massage: MessageState.inProgress.rawValue , location: .top )
             case .failure(let error):
                 self?.displayMessage(state: .error,massage: error.localizedDescription, location: .top )
             }
@@ -54,7 +54,7 @@ extension DoneTasksViewController {
         return tasks.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "DoneCellId" ,for: indexPath) as? DoneTasksTableViewCell
+        let cell =  tableView.dequeueReusableCell(withIdentifier: CellIdenifer.DoneCell.rawValue ,for: indexPath) as? DoneTasksTableViewCell
         let task = tasks[indexPath.row]
         cell?.configurerCell(task:task )
         

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Loaf
 
 protocol InProgressTasksVCDelete: AnyObject{
     func showOptionsForTask(task: Task)
@@ -45,7 +44,7 @@ class InProgressTasksViewController: UITableViewController ,Animatable{
         databaseManger.toggleTaskCompletionStatus(id: taskId, moveTo: .done) { [weak self]   (result) in
             switch result {
             case .success:
-                self?.displayMessage(state: .info,massage: "Move TO Done", location: .top )
+                self?.displayMessage(state: .info,massage: MessageState.success.rawValue, location: .top )
             case .failure(let error):
                 self?.displayMessage(state: .error,massage: error.localizedDescription, location: .top )
             }
@@ -58,7 +57,7 @@ extension InProgressTasksViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "cellid" ,for: indexPath) as? InProgressTableViewCell
+        let cell =  tableView.dequeueReusableCell(withIdentifier: CellIdenifer.inprogressCell.rawValue,for: indexPath) as? InProgressTableViewCell
         let task = tasks[indexPath.row]
         cell?.configurerCell(task:task )
 
