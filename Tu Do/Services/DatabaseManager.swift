@@ -29,6 +29,15 @@ class DatabaseManager {
             complation(.failure(error))
         }
     }
+    func deleteTask(taskId : String , complation : @escaping (Result<Void, Error>)->Void) {
+        taskCollection.document(taskId).delete {[weak self] (error) in
+            if let error {
+                complation(.failure(error))
+            }else {
+                complation(.success(()))
+            }
+        }
+    }
 
     func addlistener(forDoneTask isDone:Bool ,completion: @escaping (Result<[Task] ,Error>)-> Void) {
         listener = taskCollection.whereField("isDone", isEqualTo: isDone).order(by: "createdAt", descending: true)

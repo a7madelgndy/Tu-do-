@@ -7,6 +7,11 @@
 
 import UIKit
 import Loaf
+
+protocol InProgressTasksVCDelete: AnyObject{
+    func showOptionsForTask(task: Task)
+}
+
 class InProgressTasksViewController: UITableViewController ,Animatable{
     //MARK: propertis
     private var databaseManger = DatabaseManager()
@@ -15,11 +20,14 @@ class InProgressTasksViewController: UITableViewController ,Animatable{
             tableView.reloadData()
         }
     }
+    weak var delegate:InProgressTasksVCDelete?
+    
     //MARK: lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         addTasklistener()
     }
+    
     //MARK: helpers methods
     private func addTasklistener(){
         databaseManger.addlistener(forDoneTask: false) { [weak self ](result)in
@@ -45,10 +53,10 @@ class InProgressTasksViewController: UITableViewController ,Animatable{
     }
 }
 extension InProgressTasksViewController {
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "cellid" ,for: indexPath) as? InProgressTableViewCell
         let task = tasks[indexPath.row]
@@ -58,5 +66,11 @@ extension InProgressTasksViewController {
             self?.handleActionButtonTapped(as: task)
         }
         return cell ?? UITableViewCell()
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let task = tasks[indexPath.row]
+        delegate?.showOptionsForTask(task: task)
+        
     }
 }

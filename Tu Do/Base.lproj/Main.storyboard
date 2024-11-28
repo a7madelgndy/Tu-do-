@@ -27,7 +27,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z54-wM-xZB" userLabel="inProgress Container View">
                                 <rect key="frame" x="0.0" y="155" width="393" height="609"/>
                                 <connections>
-                                    <segue destination="QWu-Qn-GCn" kind="embed" id="NE8-9I-Uju"/>
+                                    <segue destination="QWu-Qn-GCn" kind="embed" identifier="inProgressTasks" id="NE8-9I-Uju"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-BV-ZWz" userLabel="Done Container View">
