@@ -23,4 +23,5 @@ class InProgressTableViewCell:UITableViewCell {
     func configurerCell(task: Task){
         titleLable.text = task.taskTitle
     }
+    
 }

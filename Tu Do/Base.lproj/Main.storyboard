@@ -123,22 +123,24 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huh-UM-hMC">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="huh-UM-hMC">
                                                         <rect key="frame" x="0.0" y="56" width="361" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7d-wz-OSU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="86" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7d-wz-OSU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20.666666666666668" height="40"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="calendar" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="calendarButtonTapped:" destination="s7K-oK-nv4" eventType="touchUpInside" id="Ujj-aj-XHB"/>
                                                                 </connections>
                                                             </button>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLz-Ob-0oI">
-                                                                <rect key="frame" x="86" y="0.0" width="240" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qu-So-HqC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ks-rf-0lF">
+                                                                <rect key="frame" x="30.666666666666657" y="0.0" width="285.33333333333337" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qu-So-HqC">
                                                                 <rect key="frame" x="326" y="0.0" width="35" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="WIw-pN-rj9"/>
@@ -192,8 +194,9 @@
                         <outlet property="backgroundView" destination="4so-wn-5XO" id="6RN-Fs-LJX"/>
                         <outlet property="containerView" destination="zVa-DO-StU" id="8yF-zS-ovj"/>
                         <outlet property="containerViewBottonConstrain" destination="TjX-Nb-sVV" id="j0U-IT-fbx"/>
-                        <outlet property="newTaskTextFiled" destination="p4N-Kx-vX2" id="edQ-vO-ZPu"/>
+                        <outlet property="dealLineLabel" destination="2ks-rf-0lF" id="8LS-Mu-DdC"/>
                         <outlet property="saveButton" destination="9qu-So-HqC" id="lDD-03-MzI"/>
+                        <outlet property="taskTextFiled" destination="p4N-Kx-vX2" id="edQ-vO-ZPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySH-m3-n0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -236,7 +239,10 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random task " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EP-8S-jTZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="279" height="98"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="BD7-Up-r0C"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>

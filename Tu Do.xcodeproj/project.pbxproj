@@ -25,12 +25,14 @@
 		156990192CF6F13900EBC993 /* InProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */; };
 		1569901B2CF72E5900EBC993 /* DoneTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569901A2CF72E5900EBC993 /* DoneTasksTableViewCell.swift */; };
 		1569901D2CF73BFB00EBC993 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569901C2CF73BFB00EBC993 /* Animatable.swift */; };
-		156990212CF845F600EBC993 /* VCIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990202CF845F600EBC993 /* VCIdentifier.swift */; };
 		156990232CF8468700EBC993 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990222CF8468700EBC993 /* SegueIdentifier.swift */; };
 		156990252CF8478300EBC993 /* TaskAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990242CF8478300EBC993 /* TaskAction.swift */; };
 		156990272CF8482500EBC993 /* MessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990262CF8482500EBC993 /* MessageState.swift */; };
 		156990292CF84BAC00EBC993 /* CellIdenifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990282CF84BAC00EBC993 /* CellIdenifer.swift */; };
 		1569902C2CF84FF000EBC993 /* UIView + Extenttion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569902B2CF84FF000EBC993 /* UIView + Extenttion.swift */; };
+		1569902E2CF863F000EBC993 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569902D2CF863F000EBC993 /* CalendarView.swift */; };
+		156990302CF8B70000EBC993 /* CalenderViewDelegat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569902F2CF8B70000EBC993 /* CalenderViewDelegat.swift */; };
+		156990322CF8BA9100EBC993 /* Date + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990312CF8BA9100EBC993 /* Date + Extention.swift */; };
 		D3158A6C5677172CE8965090 /* Pods_Tu_Do.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADF8E158ACD576A04A27335 /* Pods_Tu_Do.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +57,14 @@
 		156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressTableViewCell.swift; sourceTree = "<group>"; };
 		1569901A2CF72E5900EBC993 /* DoneTasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTasksTableViewCell.swift; sourceTree = "<group>"; };
 		1569901C2CF73BFB00EBC993 /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
-		156990202CF845F600EBC993 /* VCIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCIdentifier.swift; sourceTree = "<group>"; };
 		156990222CF8468700EBC993 /* SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
 		156990242CF8478300EBC993 /* TaskAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAction.swift; sourceTree = "<group>"; };
 		156990262CF8482500EBC993 /* MessageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageState.swift; sourceTree = "<group>"; };
 		156990282CF84BAC00EBC993 /* CellIdenifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdenifer.swift; sourceTree = "<group>"; };
 		1569902B2CF84FF000EBC993 /* UIView + Extenttion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extenttion.swift"; sourceTree = "<group>"; };
+		1569902D2CF863F000EBC993 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		1569902F2CF8B70000EBC993 /* CalenderViewDelegat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewDelegat.swift; sourceTree = "<group>"; };
+		156990312CF8BA9100EBC993 /* Date + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extention.swift"; sourceTree = "<group>"; };
 		2ADF8E158ACD576A04A27335 /* Pods_Tu_Do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tu_Do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FB06C1F2DDD23F0CF9E0FB /* Pods-Tu Do.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tu Do.debug.xcconfig"; path = "Target Support Files/Pods-Tu Do/Pods-Tu Do.debug.xcconfig"; sourceTree = "<group>"; };
 		F705D8F64174FBF10E8766A2 /* Pods-Tu Do.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tu Do.release.xcconfig"; path = "Target Support Files/Pods-Tu Do/Pods-Tu Do.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,11 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				1569901E2CF8457300EBC993 /* Utilities */,
+				156990032CF576A800EBC993 /* Model */,
 				156990172CF6F07200EBC993 /* Views */,
+				156990062CF5829700EBC993 /* Controllers */,
 				156990142CF6EA1500EBC993 /* Protocols  */,
 				156990112CF6DCB200EBC993 /* Services */,
-				156990062CF5829700EBC993 /* Controllers */,
-				156990032CF576A800EBC993 /* Model */,
 				15698FEC2CF566E200EBC993 /* AppDelegate.swift */,
 				15698FEE2CF566E200EBC993 /* SceneDelegate.swift */,
 				15698FF22CF566E200EBC993 /* Main.storyboard */,
@@ -150,6 +154,7 @@
 			children = (
 				156990152CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift */,
 				1569901C2CF73BFB00EBC993 /* Animatable.swift */,
+				1569902F2CF8B70000EBC993 /* CalenderViewDelegat.swift */,
 			);
 			path = "Protocols ";
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			children = (
 				156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */,
 				1569901A2CF72E5900EBC993 /* DoneTasksTableViewCell.swift */,
+				1569902D2CF863F000EBC993 /* CalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,7 +181,6 @@
 		1569901F2CF8458900EBC993 /* Emums */ = {
 			isa = PBXGroup;
 			children = (
-				156990202CF845F600EBC993 /* VCIdentifier.swift */,
 				156990222CF8468700EBC993 /* SegueIdentifier.swift */,
 				156990242CF8478300EBC993 /* TaskAction.swift */,
 				156990262CF8482500EBC993 /* MessageState.swift */,
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				1569902B2CF84FF000EBC993 /* UIView + Extenttion.swift */,
+				156990312CF8BA9100EBC993 /* Date + Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				156990252CF8478300EBC993 /* TaskAction.swift in Sources */,
 				156990052CF57C3200EBC993 /* MenuSections.swift in Sources */,
 				15698FF72CF566E200EBC993 /* Tu_Do.xcdatamodeld in Sources */,
+				156990302CF8B70000EBC993 /* CalenderViewDelegat.swift in Sources */,
 				156990082CF582E300EBC993 /* InProgressTasksViewController.swift in Sources */,
 				15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */,
 				1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */,
@@ -342,7 +349,8 @@
 				156990102CF6D8E500EBC993 /* Task.swift in Sources */,
 				1569901D2CF73BFB00EBC993 /* Animatable.swift in Sources */,
 				156990232CF8468700EBC993 /* SegueIdentifier.swift in Sources */,
-				156990212CF845F600EBC993 /* VCIdentifier.swift in Sources */,
+				156990322CF8BA9100EBC993 /* Date + Extention.swift in Sources */,
+				1569902E2CF863F000EBC993 /* CalendarView.swift in Sources */,
 				15698FEF2CF566E200EBC993 /* SceneDelegate.swift in Sources */,
 				156990192CF6F13900EBC993 /* InProgressTableViewCell.swift in Sources */,
 			);
