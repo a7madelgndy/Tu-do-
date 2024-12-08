@@ -14,4 +14,5 @@ struct Task: Identifiable ,Codable {
    var taskTitle:String
     var isDone : Bool = false
     var doneAT: Date?
+    var deadline: Date?
 }

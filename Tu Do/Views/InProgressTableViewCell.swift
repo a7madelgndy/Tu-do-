@@ -22,6 +22,10 @@ class InProgressTableViewCell:UITableViewCell {
     
     func configurerCell(task: Task){
         titleLable.text = task.taskTitle
+        deadlineLable.text = task.deadline?.toRelativeDate()
+        if(task.deadline?.isOverDue() == true) {
+            deadlineLable.textColor = .systemRed
+        }
     }
     
-}
+} 

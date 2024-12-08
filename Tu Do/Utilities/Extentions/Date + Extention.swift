@@ -13,4 +13,16 @@ extension Date {
         formatter.dateFormat = "E, MMM d,yyy"
         return formatter.string(from: self)
     }
+    
+    func toRelativeDate()->String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        let today = Date()
+        return formatter.localizedString(for: self, relativeTo: today)
+    }
+    
+    func isOverDue() -> Bool {
+        let today = Date()
+        return self < today
+    }
 }

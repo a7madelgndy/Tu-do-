@@ -62,7 +62,7 @@ class NewTaskViewController:UIViewController {
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let text = self.textFiledString else {return }
-        let task = Task(taskTitle: text)
+        let task = Task(taskTitle: text , deadline: deadline)
         delegate?.didAddTask(task)
         dismiss(animated: true)
     }
