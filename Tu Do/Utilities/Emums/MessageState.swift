@@ -13,4 +13,5 @@ enum MessageState: String {
     case delete = "Task Deleted Successfully"
     case inProgress = "Add Task to In Progress"
     case pending = "Task is Pending"
+    case updated = "Task Updated Successfully"
 }

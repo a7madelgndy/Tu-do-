@@ -102,7 +102,7 @@ extension TasksViewController:  NewTaskViewControllerDelegate {
             self.databaseManager.editTask(id: id , title: task.taskTitle, deadline:task.deadline) { (result) in
                 switch result{
                 case .success():
-                    break
+                    self.displayMessage(state: .success, massage: MessageState.updated.rawValue)
                 case .failure(let error):
                     self.displayMessage(state: .error, massage: error.localizedDescription, location: .top)           
                 }

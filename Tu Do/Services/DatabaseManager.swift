@@ -34,7 +34,7 @@ class DatabaseManager {
     
      //MARK: Edit
     func editTask(id: String, title: String , deadline: Date? , complation:@escaping(Result<Void,Error>) -> Void ) {
-        let data:[String:Any] = ["title" : title ,"deadline": deadline as Any]
+        let data:[String:Any] = ["taskTitle" : title ,"deadline": deadline as Any]
         taskCollection.document(id).updateData(data) { [weak  self] (error) in
             if let error {
                 complation(.failure(error))
