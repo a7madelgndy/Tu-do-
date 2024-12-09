@@ -22,13 +22,15 @@ class LoginViewController:UIViewController ,Animatable{
     //MARK: Actions
 
     @IBAction func loginButtonTapped(_ sender: Any) {
-        authManager.login(withEmail: "ahmed@gmail.com", password: "123456") { (result) in
+        showLoadingAnimation()
+        authManager.login(withEmail: "ahmed@gmail.com", password: "123456") { [weak self](result) in
+            self?.hideLoadingAnimation()
             switch result {
                 
             case .success():
-                self.delegate?.didlogin()
+                self?.delegate?.didlogin()
             case .failure(_):
-                self.displayMessage(state: .error, massage: "UserName or Password Are wrong")
+                self?.displayMessage(state: .error, massage: "UserName or Password Are wrong")
             }
         }
      
