@@ -6,12 +6,14 @@
 //
 
 import UIKit
-class LoginViewController:UIViewController{
-    //MARK: Properties
+class LoginViewController:UIViewController ,Animatable{
+    //MARK: outlets
     @IBOutlet weak var loginButton:UIButton!
     
     //MARK: delegate
     weak var delegate:LoginViewControllerDelegate?
+    //MARK: properties
+    let authManager = AuthManager()
     //MARK: lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +22,21 @@ class LoginViewController:UIViewController{
     //MARK: Actions
 
     @IBAction func loginButtonTapped(_ sender: Any) {
-        delegate?.didlogin()
+        authManager.login(withEmail: "ahmed@gmail.com", password: "123456") { (result) in
+            switch result {
+                
+            case .success():
+                self.delegate?.didlogin()
+            case .failure(_):
+                self.displayMessage(state: .error, massage: "UserName or Password Are wrong")
+            }
+        }
+     
     }
     //MARK: Properties
 }
 extension LoginViewController {
     func configureUI() {
-     print("hi")
     }
 }
 

@@ -22,11 +22,11 @@ class NavigationManager {
         switch scene {
         case .onboaring:break
         case .tasks:
-            let vc = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "TaskViewController")
+            let naviagationController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "TaskViewController")
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene ,
                   let sceneDelegate = windowScene.delegate as? SceneDelegate ,
                   let widnow  = sceneDelegate.window  else {return}
-            widnow.rootViewController = vc
+            widnow.rootViewController = naviagationController
             UIView.transition(with:widnow , duration: 0.5, options: .curveEaseInOut, animations:{}, completion: nil)
         }
     }
