@@ -15,6 +15,8 @@ class DatabaseManager {
     private var listener :ListenerRegistration?
     
     //MARK: Methouds
+    
+    //MARK: ADD
     func addNewTask(_ task: Task,  complation:@escaping(Result<Void,Error>) -> Void){
         do{
             _ = try taskCollection.addDocument(from:task, completion: {(error) in
@@ -29,8 +31,21 @@ class DatabaseManager {
             complation(.failure(error))
         }
     }
+    
+     //MARK: Edit
+    func editTask(id: String, title: String , deadline: Date? , complation:@escaping(Result<Void,Error>) -> Void ) {
+        let data:[String:Any] = ["title" : title ,"deadline": deadline as Any]
+        taskCollection.document(id).updateData(data) { [weak  self] (error) in
+            if let error {
+                complation(.failure(error))
+            }else {
+                complation(.success(()))
+            }
+        }
+    }
+    //MARK: DELETE
     func deleteTask(taskId : String , complation : @escaping (Result<Void, Error>)->Void) {
-        taskCollection.document(taskId).delete {[weak self] (error) in
+        taskCollection.document(taskId).delete {[weak  self] (error) in
             if let error {
                 complation(.failure(error))
             }else {
@@ -39,6 +54,7 @@ class DatabaseManager {
         }
     }
 
+    //MARK: Linstener
     func addlistener(forDoneTask isDone:Bool ,completion: @escaping (Result<[Task] ,Error>)-> Void) {
         listener = taskCollection.whereField("isDone", isEqualTo: isDone).order(by: "createdAt", descending: true)
             .addSnapshotListener({ (snapshot , erorr) in

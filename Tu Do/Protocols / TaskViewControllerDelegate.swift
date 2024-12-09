@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol TaskViewControllerDelegate {
-    func didAddTask(_ task: Task) 
+protocol  NewTaskViewControllerDelegate {
+    func didAddTask(_ task: Task)
+    func didEditTask(_ task: Task)
 }

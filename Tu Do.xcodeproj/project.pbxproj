@@ -21,7 +21,7 @@
 		1569900E2CF6D00500EBC993 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1569900D2CF6D00500EBC993 /* GoogleService-Info.plist */; };
 		156990102CF6D8E500EBC993 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569900F2CF6D8E500EBC993 /* Task.swift */; };
 		156990132CF6DCDE00EBC993 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990122CF6DCDE00EBC993 /* DatabaseManager.swift */; };
-		156990162CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990152CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift */; };
+		156990162CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990152CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift */; };
 		156990192CF6F13900EBC993 /* InProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */; };
 		1569901B2CF72E5900EBC993 /* DoneTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569901A2CF72E5900EBC993 /* DoneTasksTableViewCell.swift */; };
 		1569901D2CF73BFB00EBC993 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569901C2CF73BFB00EBC993 /* Animatable.swift */; };
@@ -53,7 +53,7 @@
 		1569900D2CF6D00500EBC993 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1569900F2CF6D8E500EBC993 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		156990122CF6DCDE00EBC993 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		156990152CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewControllerDelegate.swift; sourceTree = "<group>"; };
+		156990152CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TaskViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		156990182CF6F13900EBC993 /* InProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressTableViewCell.swift; sourceTree = "<group>"; };
 		1569901A2CF72E5900EBC993 /* DoneTasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTasksTableViewCell.swift; sourceTree = "<group>"; };
 		1569901C2CF73BFB00EBC993 /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		156990142CF6EA1500EBC993 /* Protocols  */ = {
 			isa = PBXGroup;
 			children = (
-				156990152CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift */,
+				156990152CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift */,
 				1569901C2CF73BFB00EBC993 /* Animatable.swift */,
 				1569902F2CF8B70000EBC993 /* CalenderViewDelegat.swift */,
 			);
@@ -344,7 +344,7 @@
 				15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */,
 				1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */,
 				156990292CF84BAC00EBC993 /* CellIdenifer.swift in Sources */,
-				156990162CF6EA2E00EBC993 /* TaskViewControllerDelegate.swift in Sources */,
+				156990162CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift in Sources */,
 				1569901B2CF72E5900EBC993 /* DoneTasksTableViewCell.swift in Sources */,
 				156990102CF6D8E500EBC993 /* Task.swift in Sources */,
 				1569901D2CF73BFB00EBC993 /* Animatable.swift in Sources */,

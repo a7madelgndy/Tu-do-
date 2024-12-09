@@ -28,7 +28,7 @@ class NewTaskViewController:UIViewController {
     var taskToEdit:Task?
     
     //MARK: - delegats
-    var delegate:TaskViewControllerDelegate?
+    var delegate:NewTaskViewControllerDelegate?
     
     //MARK: - Views
     lazy private var calendarView:CalendarView = {
@@ -63,8 +63,15 @@ class NewTaskViewController:UIViewController {
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let text = self.textFiledString else {return }
-        let task = Task(taskTitle: text , deadline: deadline)
-        delegate?.didAddTask(task)
+        var task = Task(taskTitle: text , deadline: deadline)
+        if let id = taskToEdit?.id {
+            task.id = id
+        }
+        if taskToEdit == nil {
+            delegate?.didAddTask(task)
+        }else  {
+            delegate?.didEditTask(task)
+        }
         dismiss(animated: true)
     }
     
