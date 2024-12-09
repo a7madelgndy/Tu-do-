@@ -102,6 +102,7 @@ extension NewTaskViewController {
             taskTextFiled.text = taskToEdit.taskTitle
             deadline = taskToEdit.deadline
             saveButton.setTitle("Update", for: .normal)
+            calendarView.selectData(date: taskToEdit.deadline)
         }
     }
     

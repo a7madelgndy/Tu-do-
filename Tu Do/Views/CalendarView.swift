@@ -57,6 +57,9 @@ class CalendarView:UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    func selectData(date: Date?){
+        calendar.select(date, scrollToDate: true)
+    }
     @objc func ResetButtonTapped(_ sender: UIButton){
         if let selected = calendar.selectedDate {
             calendar.deselect(selected)
