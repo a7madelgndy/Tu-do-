@@ -9,6 +9,7 @@ import Foundation
 enum SegueIdentifier: String {
     case showAddNewTask = "ShowAddNewTask"
     case inProgressTasks = "inProgressTasks"
+    case showediteTask = "showEditTask"
     var ID: String {
         return self.rawValue
     }

@@ -25,6 +25,7 @@ class NewTaskViewController:UIViewController {
     
     //MARK: -Variables
     private var keyboardHight:CGFloat?
+    var taskToEdit:Task?
     
     //MARK: - delegats
     var delegate:TaskViewControllerDelegate?
@@ -97,6 +98,11 @@ extension NewTaskViewController {
     private func setUpBackground() {
         backgroundView.backgroundColor = UIColor.init(white: 0.3, alpha: 0.4)
         containerViewBottonConstrain.constant = -containerView.frame.height
+        if let taskToEdit {
+            taskTextFiled.text = taskToEdit.taskTitle
+            deadline = taskToEdit.deadline
+            saveButton.setTitle("Update", for: .normal)
+        }
     }
     
     

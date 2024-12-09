@@ -41,9 +41,12 @@ class TasksViewController: UIViewController {
             destination.delegate = self
         }else if segue.identifier == SegueIdentifier.inProgressTasks.ID ,
                  let destination = segue.destination as? InProgressTasksViewController{
-                     destination.delegate = self
-        }}
-
+            destination.delegate = self
+        }else if segue.identifier == SegueIdentifier.showediteTask.ID ,
+                 let destination =  segue.destination  as? NewTaskViewController  , let taskToEdit = sender as? Task{
+            destination.taskToEdit =  taskToEdit
+        }
+    }
     @IBAction func AddTaskButtonTapped(_ sender : UIButton){
         performSegue(withIdentifier: SegueIdentifier.showAddNewTask.ID, sender: nil)
     }
@@ -56,7 +59,7 @@ extension TasksViewController:InProgressTasksVCDelete {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: TaskAction.cancel.rawValue, style: .cancel)
         let editAction = UIAlertAction(title: TaskAction.edit.rawValue, style: .default) {[unowned self] _ in
-            self.editTask(taskId: task.id ?? "0")
+            self.editTask(task: task )
         }
         let DeleteAction = UIAlertAction(title: TaskAction.delete.rawValue, style: .destructive) {[unowned self] _ in
             self.deleteTask(taskId: task.id ?? "0")
@@ -121,8 +124,8 @@ extension TasksViewController: Animatable {
 
 //MARK: task edition
 extension TasksViewController {
-    func editTask(taskId: String ){
-        performSegue(withIdentifier: "showEditTask", sender:taskId)
+    func editTask(task: Task ){
+        performSegue(withIdentifier: "showEditTask", sender:task)
     }
 
 }
