@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1552C1CD2D06BEE600695BCD /* OnboardingControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552C1CC2D06BEE600695BCD /* OnboardingControllerView.swift */; };
+		1552C1CF2D06C20B00695BCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552C1CE2D06C20B00695BCD /* LoginViewController.swift */; };
+		1552C1D12D06C73600695BCD /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552C1D02D06C73600695BCD /* LoginViewControllerDelegate.swift */; };
+		1552C1D42D06CFC000695BCD /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552C1D32D06CFC000695BCD /* NavigationManager.swift */; };
 		15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15698FEC2CF566E200EBC993 /* AppDelegate.swift */; };
 		15698FEF2CF566E200EBC993 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15698FEE2CF566E200EBC993 /* SceneDelegate.swift */; };
 		15698FF12CF566E200EBC993 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15698FF02CF566E200EBC993 /* TasksViewController.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1552C1CC2D06BEE600695BCD /* OnboardingControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerView.swift; sourceTree = "<group>"; };
+		1552C1CE2D06C20B00695BCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1552C1D02D06C73600695BCD /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
+		1552C1D32D06CFC000695BCD /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		15698FE92CF566E200EBC993 /* Tu Do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tu Do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15698FEC2CF566E200EBC993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15698FEE2CF566E200EBC993 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +145,8 @@
 				156990072CF582E300EBC993 /* InProgressTasksViewController.swift */,
 				156990092CF582FE00EBC993 /* DoneTasksViewController.swift */,
 				1569900B2CF5941C00EBC993 /* NewTaskViewController.swift */,
+				1552C1CC2D06BEE600695BCD /* OnboardingControllerView.swift */,
+				1552C1CE2D06C20B00695BCD /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				156990122CF6DCDE00EBC993 /* DatabaseManager.swift */,
+				1552C1D32D06CFC000695BCD /* NavigationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -155,6 +166,7 @@
 				156990152CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift */,
 				1569901C2CF73BFB00EBC993 /* Animatable.swift */,
 				1569902F2CF8B70000EBC993 /* CalenderViewDelegat.swift */,
+				1552C1D02D06C73600695BCD /* LoginViewControllerDelegate.swift */,
 			);
 			path = "Protocols ";
 			sourceTree = "<group>";
@@ -332,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1569900C2CF5941C00EBC993 /* NewTaskViewController.swift in Sources */,
+				1552C1CD2D06BEE600695BCD /* OnboardingControllerView.swift in Sources */,
 				156990272CF8482500EBC993 /* MessageState.swift in Sources */,
 				1569902C2CF84FF000EBC993 /* UIView + Extenttion.swift in Sources */,
 				15698FF12CF566E200EBC993 /* TasksViewController.swift in Sources */,
@@ -341,7 +354,10 @@
 				15698FF72CF566E200EBC993 /* Tu_Do.xcdatamodeld in Sources */,
 				156990302CF8B70000EBC993 /* CalenderViewDelegat.swift in Sources */,
 				156990082CF582E300EBC993 /* InProgressTasksViewController.swift in Sources */,
+				1552C1D42D06CFC000695BCD /* NavigationManager.swift in Sources */,
+				1552C1D12D06C73600695BCD /* LoginViewControllerDelegate.swift in Sources */,
 				15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */,
+				1552C1CF2D06C20B00695BCD /* LoginViewController.swift in Sources */,
 				1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */,
 				156990292CF84BAC00EBC993 /* CellIdenifer.swift in Sources */,
 				156990162CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift in Sources */,
