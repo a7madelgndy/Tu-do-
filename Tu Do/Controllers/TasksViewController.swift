@@ -15,8 +15,9 @@ class TasksViewController: UIViewController {
     
     //MARK: properties
     private var databaseManager = DatabaseManager()
-
-    //MARK: lifecycles
+    private let authManager = AuthManager()
+    private let navigationManager = NavigationManager.shared
+     //MARK: lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpmenuSegmentedControll()
@@ -61,11 +62,22 @@ class TasksViewController: UIViewController {
 
 //MARK: Helpers
 extension TasksViewController {
+    func logoutUser() {
+        authManager.logout { [unowned self ](result)in
+            switch result {
+            case .success():
+                navigationManager.show(scene: .onboaring)
+                
+            case .failure(let error):
+                displayMessage(state: .error, massage: error.localizedDescription)
+            }
+        }
+    }
     func showMenuOptions() {
         let alertController = UIAlertController(title: nil, message:nil, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style:.cancel)
-        let logoutAction = UIAlertAction(title: "Logout", style:.default) { _ in
-            print("logout")
+        let logoutAction = UIAlertAction(title: "Logout", style:.default) {[unowned self] _ in
+            self.logoutUser()
         }
         alertController.addAction(cancelAction)
         alertController.addAction(logoutAction)

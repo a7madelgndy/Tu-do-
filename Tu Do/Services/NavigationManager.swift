@@ -19,15 +19,18 @@ class NavigationManager {
     }
     
     func show(scene: Scene) {
+        var controller : UIViewController
         switch scene {
-        case .onboaring:break
+        case .onboaring:
+            controller = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "OnboardingControllerView")
         case .tasks:
-            let naviagationController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "TaskViewController")
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene ,
-                  let sceneDelegate = windowScene.delegate as? SceneDelegate ,
-                  let widnow  = sceneDelegate.window  else {return}
-            widnow.rootViewController = naviagationController
-            UIView.transition(with:widnow , duration: 0.5, options: .curveEaseInOut, animations:{}, completion: nil)
+            controller = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "TaskViewController")
+  
         }
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene ,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate ,
+              let widnow  = sceneDelegate.window  else {return}
+        widnow.rootViewController = controller
+        UIView.transition(with:widnow , duration: 0.5, options: .curveEaseInOut, animations:{}, completion: nil)
     }
 }
