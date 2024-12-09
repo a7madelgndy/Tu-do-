@@ -80,7 +80,7 @@ class NewTaskViewController:UIViewController {
         }.store(in: &subscriper)
         
         $deadline.sink {  date in
-            self.dealLineLabel.text = date?.convertToString() ?? ""
+            self.dealLineLabel.text = date?.convcertToString() ?? " "
         }.store(in: &subscriper)
     }
     

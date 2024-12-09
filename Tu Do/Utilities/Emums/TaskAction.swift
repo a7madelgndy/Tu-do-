@@ -9,4 +9,5 @@ import Foundation
 enum TaskAction: String {
     case delete = "Delete"
     case cancel = "Cancel"
+    case edit   = "Edit"
 }

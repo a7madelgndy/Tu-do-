@@ -55,9 +55,13 @@ extension TasksViewController:InProgressTasksVCDelete {
     func showOptionsForTask(task: Task){
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: TaskAction.cancel.rawValue, style: .cancel)
+        let editAction = UIAlertAction(title: TaskAction.edit.rawValue, style: .default) {[unowned self] _ in
+            self.editTask(taskId: task.id ?? "0")
+        }
         let DeleteAction = UIAlertAction(title: TaskAction.delete.rawValue, style: .destructive) {[unowned self] _ in
             self.deleteTask(taskId: task.id ?? "0")
         }
+        alertController.addAction(editAction)
         alertController.addAction(cancelAction)
         alertController.addAction(DeleteAction)
         present(alertController, animated: true)
@@ -113,4 +117,12 @@ extension TasksViewController: Animatable {
             
         }
     }
+}
+
+//MARK: task edition
+extension TasksViewController {
+    func editTask(taskId: String ){
+        performSegue(withIdentifier: "showEditTask", sender:taskId)
+    }
+
 }

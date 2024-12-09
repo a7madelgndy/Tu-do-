@@ -92,6 +92,7 @@
                         <outlet property="inProgressTasksContianerView" destination="Z54-wM-xZB" id="30K-0A-c2S"/>
                         <outlet property="menuSegmentedControll" destination="JfI-Fa-flN" id="vxF-3T-1Tg"/>
                         <segue destination="s7K-oK-nv4" kind="presentation" identifier="ShowAddNewTask" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="6ew-Ap-NbO"/>
+                        <segue destination="s7K-oK-nv4" kind="presentation" identifier="showEditTask" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Uon-PY-axY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -211,8 +212,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellid" rowHeight="163" id="PHo-x7-wwu" customClass="InProgressTableViewCell" customModule="Tu_Do" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellid" rowHeight="163" id="PHo-x7-wwu" customClass="InProgressTableViewCell" customModule="Tu_Do" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="163"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PHo-x7-wwu" id="c2I-tI-h0h">
@@ -291,8 +293,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoneCellId" rowHeight="85" id="FQP-Fz-p7n" customClass="DoneTasksTableViewCell" customModule="Tu_Do" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DoneCellId" rowHeight="85" id="FQP-Fz-p7n" customClass="DoneTasksTableViewCell" customModule="Tu_Do" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FQP-Fz-p7n" id="aw4-x5-MgK">
@@ -365,6 +368,9 @@
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Uon-PY-axY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
