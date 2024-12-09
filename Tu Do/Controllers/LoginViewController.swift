@@ -6,26 +6,36 @@
 //
 
 import UIKit
+import Combine
+//"ahmed@gmail.com"
+//"123456"
 class LoginViewController:UIViewController ,Animatable{
     //MARK: outlets
     @IBOutlet weak var loginButton:UIButton!
-    @IBOutlet weak var emailTextFielf: UITextField!
-    @IBOutlet weak var passwordTextFielf: UITextField!
-    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var errorLabel:UILabel!
+    //MARK: To observe
+    private var subscribers = Set<AnyCancellable>()
+    @Published var errorString: String = " "
     //MARK: delegate
     weak var delegate:LoginViewControllerDelegate?
     //MARK: properties
     let authManager = AuthManager()
     //MARK: lifecycles
     override func viewDidLoad() {
+        observeForm()
         super.viewDidLoad()
-        configureUI()
     }
     //MARK: Actions
-
     @IBAction func loginButtonTapped(_ sender: Any) {
+        guard let email = emailTextField.text , !email.isEmpty ,
+              let password = passwordTextField.text , !password.isEmpty else {
+            errorString = "Incomplet Form "
+            return
+        }
         showLoadingAnimation()
-        authManager.login(withEmail: "ahmed@gmail.com", password: "123456") { [weak self](result) in
+        authManager.login(withEmail:email, password: password) { [weak self](result) in
             self?.hideLoadingAnimation()
             switch result {
                 
@@ -39,22 +49,17 @@ class LoginViewController:UIViewController ,Animatable{
     }
     
     @IBAction func singUpButtonTapped(_ sender: Any) {
-        showLoadingAnimation()
-        authManager.login(withEmail: "safei@gmail.com", password: "123456") { [weak self](result) in
-            self?.hideLoadingAnimation()
-            switch result {
-                
-            case .success():
-                self?.delegate?.didlogin()
-            case .failure(_):
-                self?.displayMessage(state: .error, massage: "UserName or Password Are wrong")
-            }
-        }
+        
     }
-    //MARK: Properties
+    //MARK: Helbers
+    func observeForm() {
+        $errorString.sink { [unowned self
+        ](errorMassage) in
+            self.errorLabel.text = errorMassage
+        }.store(in: &subscribers)
+    }
 }
 extension LoginViewController {
-    func configureUI() {
-    }
+
 }
 
