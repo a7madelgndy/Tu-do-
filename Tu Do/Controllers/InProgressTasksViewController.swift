@@ -20,7 +20,7 @@ class InProgressTasksViewController: UITableViewController ,Animatable{
         }
     }
     weak var delegate:InProgressTasksVCDelete?
-    
+    private let authManager = AuthManager()
     //MARK: lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,10 @@ class InProgressTasksViewController: UITableViewController ,Animatable{
     
     //MARK: helpers methods
     private func addTasklistener(){
-        databaseManger.addlistener(forDoneTask: false) { [weak self ](result)in
+        guard let uid = authManager.getUserId() else{
+            print("there is no user ")
+            return}
+        databaseManger.addlistener(forDoneTask: false, uid: uid) { [weak self ](result)in
             switch result {
             case .success(let tasks):
                 self?.tasks = tasks

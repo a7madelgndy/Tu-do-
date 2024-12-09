@@ -26,6 +26,7 @@ class NewTaskViewController:UIViewController {
     //MARK: -Variables
     private var keyboardHight:CGFloat?
     var taskToEdit:Task?
+    private let authManager =  AuthManager()
     
     //MARK: - delegats
     var delegate:NewTaskViewControllerDelegate?
@@ -62,8 +63,10 @@ class NewTaskViewController:UIViewController {
         showCalendar()
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let text = self.textFiledString else {return }
-        var task = Task(taskTitle: text , deadline: deadline)
+
+        guard let text = self.textFiledString ,
+        let uid = authManager.getUserId() else {return }
+        var task = Task(taskTitle: text , deadline: deadline,uId: uid)
         if let id = taskToEdit?.id {
             task.id = id
         }

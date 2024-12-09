@@ -15,4 +15,5 @@ struct Task: Identifiable ,Codable {
     var isDone : Bool = false
     var doneAT: Date?
     var deadline: Date?
+    var uId : String?
 }

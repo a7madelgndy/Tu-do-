@@ -9,6 +9,8 @@ import UIKit
 class LoginViewController:UIViewController ,Animatable{
     //MARK: outlets
     @IBOutlet weak var loginButton:UIButton!
+    @IBOutlet weak var emailTextFielf: UITextField!
+    @IBOutlet weak var passwordTextFielf: UITextField!
     
     //MARK: delegate
     weak var delegate:LoginViewControllerDelegate?
@@ -36,7 +38,7 @@ class LoginViewController:UIViewController ,Animatable{
      
     }
     
-    @IBAction func loginWithSafie(_ sender: Any) {
+    @IBAction func singUpButtonTapped(_ sender: Any) {
         showLoadingAnimation()
         authManager.login(withEmail: "safei@gmail.com", password: "123456") { [weak self](result) in
             self?.hideLoadingAnimation()

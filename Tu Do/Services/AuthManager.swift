@@ -29,4 +29,7 @@ class AuthManager {
         }
 
     }
+    func getUserId()-> String? {
+        return auth.currentUser?.uid 
+    }
 }

@@ -14,6 +14,7 @@ class DoneTasksViewController: UITableViewController,Animatable{
             tableView.reloadData()
         }
     }
+    private let authManager = AuthManager()
     //MARK: lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,10 @@ class DoneTasksViewController: UITableViewController,Animatable{
     }
     //MARK: helpers
     private func addTasklistener(){
-        databaseManger.addlistener(forDoneTask: true) { [weak self ](result)in
+        guard let uid = authManager.getUserId() else {
+            print("there is no user")
+            return }
+        databaseManger.addlistener(forDoneTask: true, uid: uid) { [weak self ](result)in
             switch result {
             case .success(let tasks):
                 self?.tasks = tasks

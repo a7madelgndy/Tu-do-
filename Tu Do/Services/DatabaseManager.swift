@@ -53,10 +53,13 @@ class DatabaseManager {
             }
         }
     }
-
+    
     //MARK: Linstener
-    func addlistener(forDoneTask isDone:Bool ,completion: @escaping (Result<[Task] ,Error>)-> Void) {
-        listener = taskCollection.whereField("isDone", isEqualTo: isDone).order(by: "createdAt", descending: true)
+    func addlistener(forDoneTask isDone:Bool ,uid:String,completion: @escaping (Result<[Task] ,Error>)-> Void) {
+        listener = taskCollection.whereField("uId", isEqualTo: uid
+)
+            .whereField("isDone", isEqualTo: isDone)
+            .order(by: "createdAt", descending: true)
             .addSnapshotListener({ (snapshot , erorr) in
             if let erorr {
                 completion(.failure(erorr))
