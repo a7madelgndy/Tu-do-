@@ -35,6 +35,20 @@ class LoginViewController:UIViewController ,Animatable{
         }
      
     }
+    
+    @IBAction func loginWithSafie(_ sender: Any) {
+        showLoadingAnimation()
+        authManager.login(withEmail: "safei@gmail.com", password: "123456") { [weak self](result) in
+            self?.hideLoadingAnimation()
+            switch result {
+                
+            case .success():
+                self?.delegate?.didlogin()
+            case .failure(_):
+                self?.displayMessage(state: .error, massage: "UserName or Password Are wrong")
+            }
+        }
+    }
     //MARK: Properties
 }
 extension LoginViewController {
