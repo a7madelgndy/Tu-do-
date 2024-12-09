@@ -19,9 +19,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-DB-Nbb">
                                 <rect key="frame" x="0.0" y="764" width="393" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-IJ-LXV">
+                                        <rect key="frame" x="353" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="AvF-YP-QwC"/>
+                                            <constraint firstAttribute="width" constant="24" id="unT-7C-RHl"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="line.horizontal.3" catalog="system"/>
+                                        <connections>
+                                            <action selector="menuButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o2b-IJ-OFC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
+                                    <constraint firstItem="1JF-IJ-LXV" firstAttribute="top" secondItem="7aH-DB-Nbb" secondAttribute="top" constant="16" id="GVn-Vm-kF9"/>
                                     <constraint firstAttribute="height" constant="88" id="Xjp-g4-4vF"/>
+                                    <constraint firstAttribute="trailing" secondItem="1JF-IJ-LXV" secondAttribute="trailing" constant="16" id="tUy-9a-6yG"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z54-wM-xZB" userLabel="inProgress Container View">
@@ -503,6 +519,7 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="imgOnboarding" width="2289" height="1666.6666259765625"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="65"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

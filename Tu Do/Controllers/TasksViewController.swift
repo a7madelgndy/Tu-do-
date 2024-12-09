@@ -35,6 +35,15 @@ class TasksViewController: UIViewController {
         }
     }
     
+    @IBAction func menuButtonTapped(_ sender: Any) {
+       showMenuOptions()
+    }
+
+    @IBAction func AddTaskButtonTapped(_ sender : UIButton){
+        performSegue(withIdentifier: SegueIdentifier.showAddNewTask.ID, sender: nil)
+    }
+    
+    //MARK: Prepare for a segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.showAddNewTask.ID,
            let destination = segue.destination as? NewTaskViewController{
@@ -48,12 +57,21 @@ class TasksViewController: UIViewController {
             destination.taskToEdit =  taskToEdit
         }
     }
-    @IBAction func AddTaskButtonTapped(_ sender : UIButton){
-        performSegue(withIdentifier: SegueIdentifier.showAddNewTask.ID, sender: nil)
-    }
 }
 
-
+//MARK: Helpers
+extension TasksViewController {
+    func showMenuOptions() {
+        let alertController = UIAlertController(title: nil, message:nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style:.cancel)
+        let logoutAction = UIAlertAction(title: "Logout", style:.default) { _ in
+            print("logout")
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(logoutAction)
+        present(alertController, animated: true,completion: nil)
+    }
+}
 //MARK: Managing Alert Controller
 extension TasksViewController:InProgressTasksVCDelete {
     func showOptionsForTask(task: Task){
