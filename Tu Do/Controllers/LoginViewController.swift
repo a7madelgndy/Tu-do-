@@ -49,7 +49,22 @@ class LoginViewController:UIViewController ,Animatable{
     }
     
     @IBAction func singUpButtonTapped(_ sender: Any) {
-        
+        guard let email = emailTextField.text , !email.isEmpty ,
+              let password = passwordTextField.text , !password.isEmpty else {
+            errorString = "Incomplet Form "
+            return
+        }
+        showLoadingAnimation()
+        authManager.signUp(withEmail: email, password: password) {[weak self](result) in
+            self?.hideLoadingAnimation()
+            switch result {
+                
+            case .success():
+                self?.delegate?.didlogin()
+            case .failure(let error):
+                self?.displayMessage(state: .error, massage: error.localizedDescription)
+            }
+        }
     }
     //MARK: Helbers
     func observeForm() {
