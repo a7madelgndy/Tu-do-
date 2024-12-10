@@ -7,7 +7,7 @@
 
 import Foundation
 enum MenuSections:String , CaseIterable {
-    case inProgress = "In Progress"
+    case inProgress = "Doing"
     case done = "Done"
 
 }

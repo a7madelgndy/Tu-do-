@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1549046D2D08788700478B27 /* ColorSystem.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1549046C2D08788700478B27 /* ColorSystem.xcassets */; };
+		1549046F2D08789C00478B27 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1549046E2D08789C00478B27 /* Colors.swift */; };
 		1552C1CD2D06BEE600695BCD /* OnboardingControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552C1CC2D06BEE600695BCD /* OnboardingControllerView.swift */; };
 		1552C1CF2D06C20B00695BCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552C1CE2D06C20B00695BCD /* LoginViewController.swift */; };
 		1552C1D12D06C73600695BCD /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552C1D02D06C73600695BCD /* LoginViewControllerDelegate.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1549046C2D08788700478B27 /* ColorSystem.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorSystem.xcassets; sourceTree = "<group>"; };
+		1549046E2D08789C00478B27 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1552C1CC2D06BEE600695BCD /* OnboardingControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerView.swift; sourceTree = "<group>"; };
 		1552C1CE2D06C20B00695BCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1552C1D02D06C73600695BCD /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1549046A2D08784800478B27 /* ColorSystem */ = {
+			isa = PBXGroup;
+			children = (
+				1549046C2D08788700478B27 /* ColorSystem.xcassets */,
+				1549046E2D08789C00478B27 /* Colors.swift */,
+			);
+			path = ColorSystem;
+			sourceTree = "<group>";
+		};
 		15698FE02CF566E200EBC993 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 		1569901E2CF8457300EBC993 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1549046A2D08784800478B27 /* ColorSystem */,
 				1569902A2CF84F1C00EBC993 /* Extentions */,
 				1569901F2CF8458900EBC993 /* Emums */,
 			);
@@ -293,6 +307,7 @@
 				15698FF92CF566E500EBC993 /* Assets.xcassets in Resources */,
 				1569900E2CF6D00500EBC993 /* GoogleService-Info.plist in Resources */,
 				15698FFC2CF566E500EBC993 /* Base in Resources */,
+				1549046D2D08788700478B27 /* ColorSystem.xcassets in Resources */,
 				15698FF42CF566E200EBC993 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +378,7 @@
 				15698FED2CF566E200EBC993 /* AppDelegate.swift in Sources */,
 				1552C1CF2D06C20B00695BCD /* LoginViewController.swift in Sources */,
 				1569900A2CF582FE00EBC993 /* DoneTasksViewController.swift in Sources */,
+				1549046F2D08789C00478B27 /* Colors.swift in Sources */,
 				156990292CF84BAC00EBC993 /* CellIdenifer.swift in Sources */,
 				156990162CF6EA2E00EBC993 /*  TaskViewControllerDelegate.swift in Sources */,
 				1569901B2CF72E5900EBC993 /* DoneTasksTableViewCell.swift in Sources */,

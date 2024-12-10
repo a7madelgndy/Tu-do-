@@ -110,6 +110,7 @@ extension TasksViewController {
             menuSegmentedControll.insertSegment(withTitle: section.rawValue, at: index, animated: true)
         }
         menuSegmentedControll.selectedSegmentIndex = 0
+
     }
     
     private func showContainerView(for section : MenuSections ) {

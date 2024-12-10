@@ -11,9 +11,10 @@ import Combine
 //"123456"
 class LoginViewController:UIViewController ,Animatable{
     //MARK: outlets
-    @IBOutlet weak var loginButton:UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var singupButton: UIButton!
     @IBOutlet weak var errorLabel:UILabel!
     //MARK: To observe
     private var subscribers = Set<AnyCancellable>()
@@ -25,6 +26,7 @@ class LoginViewController:UIViewController ,Animatable{
     //MARK: lifecycles
     override func viewDidLoad() {
         observeForm()
+        configureUi()
         super.viewDidLoad()
     }
     //MARK: Actions
@@ -75,6 +77,15 @@ class LoginViewController:UIViewController ,Animatable{
     }
 }
 extension LoginViewController {
+    func configureUi() {
+        for view in [loginButton , singupButton] {
+            view?.layer.cornerRadius = 10
+        }
+        singupButton.backgroundColor = .white
+        singupButton.setTitleColor(.systemBlue, for: .normal)
+        singupButton.layer.borderColor = UIColor(named: Colors.C64A4F8.rawValue)?.cgColor
+        singupButton.layer.borderWidth = 1
+    }
 
 }
 
